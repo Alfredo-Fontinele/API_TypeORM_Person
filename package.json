@@ -6,6 +6,7 @@
   "scripts": {
     "drop": "psql -U neto -c \"DROP DATABASE db_testes\" ",
     "new": "psql -U neto -c \"CREATE DATABASE db_testes\" ",
+    "typeorm": "typeorm-ts-node-commonjs",
     "generate": "typeorm-ts-node-commonjs migration:generate -d src/data-source src/migrations/newMigration",
     "runner": "typeorm-ts-node-commonjs migration:run -d src/data-source",
     "dev": "ts-node-dev src/server.ts",
