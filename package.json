@@ -1,8 +1,9 @@
 {
   "name": "api_rest_users_typeorm",
   "version": "1.0.0",
-  "main": "server.ts",
+  "main": "server.js",
   "license": "MIT",
+  "author": "Alfredo Fontinele <alfredofontinele08@gmail.com>",
   "scripts": {
     "drop": "psql -U neto -c \"DROP DATABASE db_testes\" ",
     "new": "psql -U neto -c \"CREATE DATABASE db_testes\" ",
@@ -10,9 +11,9 @@
     "generate": "typeorm-ts-node-commonjs migration:generate -d src/data-source src/migrations/newMigration",
     "runner": "typeorm-ts-node-commonjs migration:run -d src/data-source",
     "dev": "ts-node-dev src/server.ts",
+    "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "test": "cross-env NODE_ENV=test jest --verbose --runInBand"
+    "start": "node dist/src/server.js"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
