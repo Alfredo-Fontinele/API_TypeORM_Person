@@ -26,7 +26,7 @@ export const JobsServices = {
         })
     },
     createJob: async (req:Request):Promise<Job> => {
-        const { name, level }:IJob = req.body
+        const { name, level } = req.jobFound
         const newJob = jobsRepo.create({
             name: name?.toLowerCase(), 
             level: level?.toLowerCase()
