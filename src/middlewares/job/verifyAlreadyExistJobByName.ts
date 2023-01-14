@@ -9,7 +9,7 @@ export const verifyAlreadyExistJobByName = async (req:Request, res:Response, nex
         return next()
     }
     const existJob = await jobsRepo.findOneBy({ name: name.toLowerCase() })
-    if (existJob.name === name && existJob.level === level) {
+    if (existJob.name === name.toLowerCase() && existJob.level === level.toLowerCase()) {
         throw new AppError('Job`s name and level Already Exist', 400)
     }
     return next()
