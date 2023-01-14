@@ -4,13 +4,13 @@ import { AppError } from '../../errors/appError'
 import { IJob } from './../../interfaces/job'
 
 export const verifyAlreadyExistJobByName = async (req:Request, res:Response, next:NextFunction) => {
-    const { name }:IJob = req.body
+    const { name, level }:IJob = req.body
     if (!name) {
         return next()
     }
     const existJob = await jobsRepo.findOneBy({ name: name.toLowerCase() })
-    if (existJob) {
-        throw new AppError('Job`s name Already Exist', 400)
+    if (existJob.name === name && existJob.level === level) {
+        throw new AppError('Job`s name and level Already Exist', 400)
     }
     return next()
 }
