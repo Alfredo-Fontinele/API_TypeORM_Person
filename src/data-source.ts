@@ -13,7 +13,7 @@ const setDataSourceConfig = ():DataSourceOptions => {
             entities: [entities]
         }
     }
-    else if (nodeEnv === 'production') {
+    if (nodeEnv === 'production') {
         return {
             type: 'postgres',
             url: process.env.DATABASE_URL,

@@ -19,7 +19,7 @@ export const PersonServices = {
         const { id } = req.params
         return await personRepo.find({
             where: {
-                id: id
+                id
             },
             relations: {
                 jobs: true
