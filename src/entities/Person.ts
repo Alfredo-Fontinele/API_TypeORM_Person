@@ -1,24 +1,23 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm'
-import { Job } from './Job'
+import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from "typeorm";
+import { Job } from "./Job";
 
-@Entity('persons')
+@Entity("persons")
 export class Person {
+    @PrimaryGeneratedColumn("uuid")
+    id!: string;
 
-    @PrimaryGeneratedColumn('uuid')
-    id!: string
+    @Column({ type: "text" })
+    name!: string;
 
-    @Column({ type: 'text' })
-    name!: string
-    
-    @Column({ type: 'text' })
-    email!: string
-    
-    @Column({ type: 'text', select: false })
-    password!: string
+    @Column({ type: "text" })
+    email!: string;
 
-    @ManyToMany(() => Job, job => job.persons, { 
-        onDelete: 'CASCADE', onUpdate: 'CASCADE'
+    @Column({ type: "text", select: false })
+    password!: string;
+
+    @ManyToMany(() => Job, (job) => job.persons, {
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
     })
-    jobs!: Job[]
-
+    jobs!: Job[];
 }
