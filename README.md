@@ -1,11 +1,5 @@
-<li style='font-size: 30px; list-style: square' align="center">
-  Employee_API
-</li>
-
-<br/>
-
 <h2 align="center" style='font-family: sans-serif'>
-	API REST (Back-end) de serviços de empregabilidade
+	Employee_API | API REST (Back-end) de serviços de empregabilidade
 </h2>
 
 <br/>
