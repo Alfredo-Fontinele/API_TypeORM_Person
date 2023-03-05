@@ -54,7 +54,7 @@ A url base da API é https://api-person.onrender.com
 
 ## <br/>
 
-<li style='font-size: 20px'>Criação de usuário:</li>
+<li style='font-size: 20px'>Criação de um trabalhador:</li>
 
 <br/>
 
@@ -82,7 +82,7 @@ Caso dê tudo certo, a resposta será assim:
 
 ## <br/>
 
-<li style='font-size: 20px'>Atualização de usuário:</li>
+<li style='font-size: 20px'>Atualização de um trabalhador:</li>
 
 <br/>
 
