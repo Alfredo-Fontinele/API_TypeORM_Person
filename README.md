@@ -1,5 +1,5 @@
 <h2 align="center" style='font-family: sans-serif'>
-	Employee_API | API REST (Back-end) de serviços de empregabilidade
+	Job_API | API REST (Back-end) de serviços de empregabilidade
 </h2>
 
 <br/>
