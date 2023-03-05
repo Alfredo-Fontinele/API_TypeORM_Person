@@ -14,7 +14,7 @@ A url base da API é https://api-person.onrender.com
 
 <br/>
 
-`GET /employees - FORMATO DA RESPOSTA - STATUS 200`
+`GET /persons - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 [
@@ -39,7 +39,7 @@ A url base da API é https://api-person.onrender.com
 
 <br/>
 
-`GET /employees/:employee_id - FORMATO DA RESPOSTA - STATUS 200`
+`GET /persons/:person_id - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 [
@@ -58,7 +58,7 @@ A url base da API é https://api-person.onrender.com
 
 <br/>
 
-`POST /employees - FORMATO DA REQUISIÇÃO`
+`POST /persons - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -70,7 +70,7 @@ A url base da API é https://api-person.onrender.com
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /employees - FORMATO DA RESPOSTA - STATUS 201`
+`POST /persons - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
@@ -86,7 +86,7 @@ Caso dê tudo certo, a resposta será assim:
 
 <br/>
 
-`PATCH /employees - FORMATO DA REQUISIÇÃO`
+`PATCH /persons - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -98,7 +98,7 @@ Caso dê tudo certo, a resposta será assim:
 
 Caso dê tudo certo, a resposta será assim:
 
-`PATCH /employees - FORMATO DA RESPOSTA - STATUS 201`
+`PATCH /persons - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
@@ -112,7 +112,7 @@ Caso dê tudo certo, a resposta será assim:
 
 <br/>
 
-`DELETE /employees/:employee_id - FORMATO DA RESPOSTA - STATUS 204`
+`DELETE /persons/:person_id - FORMATO DA RESPOSTA - STATUS 204`
 
 ```json
 {}
