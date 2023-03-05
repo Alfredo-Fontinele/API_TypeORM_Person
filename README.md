@@ -4,13 +4,11 @@
 
 <br/>
 
-## **Endpoints**
+## **Endpoints (Nenhuma rota precisa de autenticação no momento)**
 
 A url base da API é https://api-person.onrender.com
 
 <br/>
-
--   ## Nenhuma rota precisa de autenticação no momento
 
 <h2 align ='center'> Listando trabalhadores </h2>
 
