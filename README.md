@@ -5,7 +5,7 @@
 <br/>
 
 ## **Endpoints (Nenhuma rota precisa de autenticação no momento)**
-* obs: "o endpoint person será alterado para employees futuramente"
+* obs: "o endpoint persons será alterado para employees futuramente"
 
 A url base da API é https://api-person.onrender.com
 
