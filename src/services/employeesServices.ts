@@ -1,23 +1,23 @@
-import { personRepo } from "../repositories/personRepo";
-import { jobsRepo } from "./../repositories/jobsRepo";
+import { employeeRepo } from "../repositories/employeeRepo";
+import { jobsRepo } from "../repositories/jobsRepo";
 import { DeleteResult, UpdateResult } from "typeorm";
-import { AppError } from "./../errors/appError";
-import { Person } from "./../entities/Person";
+import { AppError } from "../errors/appError";
+import { Employee } from "../entities/Employee";
 import { Request } from "express";
 import { hash } from "bcryptjs";
 import "express-async-errors";
 
-export const PersonServices = {
-    async getAllPeople(req: Request): Promise<Person[]> {
-        return await personRepo.find({
+export const EmployeesServices = {
+    async getAllEmployees(req: Request): Promise<Employee[]> {
+        return await employeeRepo.find({
             relations: {
                 jobs: true,
             },
         });
     },
-    async getPersonById(req: Request): Promise<Person[]> {
+    async getEmployeeById(req: Request): Promise<Employee[]> {
         const { id } = req.params;
-        return await personRepo.find({
+        return await employeeRepo.find({
             where: {
                 id,
             },
@@ -26,36 +26,36 @@ export const PersonServices = {
             },
         });
     },
-    async createPerson(req: Request): Promise<Person> {
+    async createEmployee(req: Request): Promise<Employee> {
         const { name, email, password } = await req.body;
         const passCrypt = await hash(password, 8);
-        const newPerson = personRepo.create({
+        const newEmployee = employeeRepo.create({
             name,
             email,
             password: passCrypt,
         });
-        const newUser = await personRepo.save(newPerson);
-        let personCreatedWithoutPassword: any = {};
+        const newUser = await employeeRepo.save(newEmployee);
+        let employeeCreatedWithoutPassword: any = {};
         const newUserValues = Object.entries(newUser);
         newUserValues.forEach((user) => {
             const key = user[0];
             if (key !== "password") {
                 const value = user[1];
-                personCreatedWithoutPassword[key] = value;
+                employeeCreatedWithoutPassword[key] = value;
             }
         });
-        return personCreatedWithoutPassword;
+        return employeeCreatedWithoutPassword;
     },
-    async updatePerson(req: Request): Promise<Person[]> {
+    async updateEmployee(req: Request): Promise<Employee[]> {
         const { id } = req.params;
         const { name, email, password } = await req.body;
         const passCrypt = await hash(password, 8);
-        await personRepo.update(id, {
+        await employeeRepo.update(id, {
             name,
             email,
             password: passCrypt,
         });
-        return await personRepo.find({
+        return await employeeRepo.find({
             where: {
                 id,
             },
@@ -64,14 +64,14 @@ export const PersonServices = {
             },
         });
     },
-    async deletePerson(req: Request): Promise<DeleteResult> {
-        return await personRepo.delete(req.personFound.id);
+    async deleteEmployee(req: Request): Promise<DeleteResult> {
+        return await employeeRepo.delete(req.employeeFound.id);
     },
-    async createPersonJob(req: Request): Promise<any> {
-        const { id_job, id_person } = req.body;
-        const person = await personRepo.findOneBy({ id: id_person });
-        if (!person) {
-            throw new AppError("Person not Exists", 404);
+    async createEmployeeJob(req: Request): Promise<any> {
+        const { id_job, id_employee } = req.body;
+        const employee = await employeeRepo.findOneBy({ id: id_employee });
+        if (!employee) {
+            throw new AppError("Employee not Exists", 404);
         }
         const job = await jobsRepo.findOneBy({ id: id_job });
         if (!job) {
@@ -79,10 +79,10 @@ export const PersonServices = {
         }
         const infoJob = { ...job };
         const newJob = {
-            ...person,
+            ...employee,
             jobs: [infoJob],
         };
-        await personRepo.save(newJob);
+        await employeeRepo.save(newJob);
         return newJob;
     },
 };

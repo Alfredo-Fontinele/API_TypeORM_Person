@@ -1,9 +1,11 @@
-import { Person } from "../../entities/Person";
+import { Employee } from "../../entities/Employee";
+import { Job } from "./../../entities/Job";
 
 declare global {
     namespace Express {
         interface Request {
-            personFound: Person;
+            employeeFound: Employee;
+            jobFound: Job;
         }
     }
 }

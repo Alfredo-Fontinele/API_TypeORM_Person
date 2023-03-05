@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from "typeorm";
 import { Job } from "./Job";
 
 @Entity("persons")
-export class Person {
+export class Employee {
     @PrimaryGeneratedColumn("uuid")
     id!: string;
 
