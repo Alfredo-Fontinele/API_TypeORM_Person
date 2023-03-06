@@ -83,6 +83,40 @@ Caso dê tudo certo, a resposta será assim:
 
 ## <br/>
 
+<li style='font-size: 20px'>Podemos integrar um trabalho a um trabalhador usando o endpoint:</li>
+
+<br/>
+
+`POST /persons/jobs - FORMATO DA REQUISIÇÃO`
+
+```json
+{
+    "id_job": "91db49c6-6ab8-45b9-9d69-fdcd39feee5b",
+    "id_person": "46be8c58-e512-4f47-8b01-bb3775f14650"
+}
+```
+
+Caso dê tudo certo, a resposta será assim:
+
+`POST /persons/jobs - FORMATO DA RESPOSTA - STATUS 201`
+
+```json
+[
+    {
+        "id": "46be8c58-e512-4f47-8b01-bb3775f14650",
+        "name": "matheus",
+        "email": "matheus1111@gmail.com",
+        "jobs": [
+            {
+                "id": "91db49c6-6ab8-45b9-9d69-fdcd39feee5b",
+                "name": "software engineer",
+                "level": "pleno"
+            }
+        ]
+    }
+]
+```
+
 <li style='font-size: 20px'>Atualização de um trabalhador:</li>
 
 <br/>
