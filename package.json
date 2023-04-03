@@ -10,6 +10,7 @@
         "typeorm": "typeorm-ts-node-commonjs",
         "generate": "typeorm-ts-node-commonjs migration:generate -d src/data-source src/migrations/newMigration",
         "runner": "typeorm-ts-node-commonjs migration:run -d src/data-source",
+        "migration:prod": "typeorm migration:run -d src/data-source",
         "dev": "ts-node-dev src/server.ts",
         "test": "cross-env NODE_ENV=test jest --verbose --runInBand",
         "build": "tsc",
