@@ -8,7 +8,6 @@
         "drop": "psql -U neto -c \"DROP DATABASE db_person_api\" ",
         "new": "psql -U neto -c \"CREATE DATABASE db_person_api\" ",
         "typeorm": "typeorm-ts-node-commonjs",
-        "migration:prod": "typeorm migration:run -d src/data-source",
         "generate": "typeorm-ts-node-commonjs migration:generate -d src/data-source src/migrations/newMigration",
         "runner": "typeorm-ts-node-commonjs migration:run -d src/data-source",
         "dev": "ts-node-dev src/server.ts",

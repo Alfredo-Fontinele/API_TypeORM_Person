@@ -1,8 +1,8 @@
 import { employeeRepo } from "../repositories/employeeRepo";
 import { jobsRepo } from "../repositories/jobsRepo";
-import { DeleteResult, UpdateResult } from "typeorm";
-import { AppError } from "../errors/appError";
 import { Employee } from "../entities/Employee";
+import { AppError } from "../errors/appError";
+import { DeleteResult } from "typeorm";
 import { Request } from "express";
 import { hash } from "bcryptjs";
 import "express-async-errors";
