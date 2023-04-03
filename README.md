@@ -5,9 +5,7 @@
 <br/>
 
 ## **Endpoints (Nenhuma rota precisa de autenticação no momento)**
-* obs: "o endpoint persons será alterado para employees futuramente"
-
-A url base da API é https://api-person.onrender.com
+* obs: "o endpoint employees será alterado para employees futuramente"
 
 <br/>
 
@@ -15,7 +13,7 @@ A url base da API é https://api-person.onrender.com
 
 <br/>
 
-`GET /persons - FORMATO DA RESPOSTA - STATUS 200`
+`GET /employees - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 [
@@ -40,7 +38,7 @@ A url base da API é https://api-person.onrender.com
 
 <br/>
 
-`GET /persons/:person_id - FORMATO DA RESPOSTA - STATUS 200`
+`GET /employees/:employee_id - FORMATO DA RESPOSTA - STATUS 200`
 
 ```json
 [
@@ -59,7 +57,7 @@ A url base da API é https://api-person.onrender.com
 
 <br/>
 
-`POST /persons - FORMATO DA REQUISIÇÃO`
+`POST /employees - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -71,7 +69,7 @@ A url base da API é https://api-person.onrender.com
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /persons - FORMATO DA RESPOSTA - STATUS 201`
+`POST /employees - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
@@ -87,7 +85,7 @@ Caso dê tudo certo, a resposta será assim:
 
 <br/>
 
-`POST /persons/jobs - FORMATO DA REQUISIÇÃO`
+`POST /employees/jobs - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -98,7 +96,7 @@ Caso dê tudo certo, a resposta será assim:
 
 Caso dê tudo certo, a resposta será assim:
 
-`POST /persons/jobs - FORMATO DA RESPOSTA - STATUS 201`
+`POST /employees/jobs - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 [
@@ -121,7 +119,7 @@ Caso dê tudo certo, a resposta será assim:
 
 <br/>
 
-`PATCH /persons - FORMATO DA REQUISIÇÃO`
+`PATCH /employees - FORMATO DA REQUISIÇÃO`
 
 ```json
 {
@@ -133,7 +131,7 @@ Caso dê tudo certo, a resposta será assim:
 
 Caso dê tudo certo, a resposta será assim:
 
-`PATCH /persons - FORMATO DA RESPOSTA - STATUS 201`
+`PATCH /employees - FORMATO DA RESPOSTA - STATUS 201`
 
 ```json
 {
@@ -147,7 +145,7 @@ Caso dê tudo certo, a resposta será assim:
 
 <br/>
 
-`DELETE /persons/:person_id - FORMATO DA RESPOSTA - STATUS 204`
+`DELETE /employees/:employee_id - FORMATO DA RESPOSTA - STATUS 204`
 
 ```json
 {}
@@ -169,7 +167,7 @@ Caso dê tudo certo, a resposta será assim:
         "id": "91db49c6-6ab8-45b9-9d69-fdcd39feee5b",
         "name": "software engineer",
         "level": "pleno",
-        "persons": [
+        "employees": [
             {
                 "id": "46be8c58-e512-4f47-8b01-bb3775f14650",
                 "name": "matheus",
@@ -181,7 +179,7 @@ Caso dê tudo certo, a resposta será assim:
         "id": "c334e3b0-6a5b-4996-8626-a5e93640d51c",
         "name": "software engineer",
         "level": "júnior",
-        "persons": []
+        "employees": []
     }
 ]
 ```
@@ -200,7 +198,7 @@ Caso dê tudo certo, a resposta será assim:
         "id": "91db49c6-6ab8-45b9-9d69-fdcd39feee5b",
         "name": "software engineer",
         "level": "pleno",
-        "persons": [
+        "employees": [
             {
                 "id": "46be8c58-e512-4f47-8b01-bb3775f14650",
                 "name": "matheus",
