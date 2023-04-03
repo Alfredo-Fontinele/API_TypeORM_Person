@@ -6,7 +6,10 @@ import "dotenv/config";
 
 const setDataSourceConfig = (): DataSourceOptions => {
     const entitiesPath: string = path.join(__dirname, "./entities/**.{js,ts}");
-    const migrationsPath = [newMigration1673388492975];
+    const migrationsPath: string = path.join(
+        __dirname,
+        "./migrations/**.{js,ts}"
+    );
     const nodeEnv = process.env.NODE_ENV;
 
     if (nodeEnv === "production") {
@@ -14,7 +17,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
             type: "postgres",
             url: process.env.DATABASE_URL,
             entities: [entitiesPath],
-            migrations: migrationsPath,
+            migrations: [migrationsPath],
         };
     }
 
@@ -37,7 +40,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
         logging: true,
         synchronize: false,
         entities: [entitiesPath],
-        migrations: migrationsPath,
+        migrations: [migrationsPath],
     };
 };
 
