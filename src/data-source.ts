@@ -1,14 +1,12 @@
+import { newMigration1673388492975 } from "./migrations/1673388492975-newMigration";
 import { DataSource, DataSourceOptions } from "typeorm";
-import path from "path";
 import "reflect-metadata";
+import path from "path";
 import "dotenv/config";
 
 const setDataSourceConfig = (): DataSourceOptions => {
     const entitiesPath: string = path.join(__dirname, "./entities/**.{js,ts}");
-    const migrationsPath: string = path.join(
-        __dirname,
-        "./migrations/**.{js,ts}"
-    );
+    const migrationsPath = [newMigration1673388492975];
     const nodeEnv = process.env.NODE_ENV;
 
     if (nodeEnv === "production") {
@@ -16,7 +14,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
             type: "postgres",
             url: process.env.DATABASE_URL,
             entities: [entitiesPath],
-            migrations: [migrationsPath],
+            migrations: migrationsPath,
         };
     }
 
@@ -39,7 +37,7 @@ const setDataSourceConfig = (): DataSourceOptions => {
         logging: true,
         synchronize: false,
         entities: [entitiesPath],
-        migrations: [migrationsPath],
+        migrations: migrationsPath,
     };
 };
 
