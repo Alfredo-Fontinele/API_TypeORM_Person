@@ -5,7 +5,6 @@
 <br/>
 
 ## **Endpoints (Nenhuma rota precisa de autenticação no momento)**
-* obs: "o endpoint employees será alterado para employees futuramente"
 
 <br/>
 
